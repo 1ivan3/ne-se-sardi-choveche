@@ -40,7 +40,7 @@ kvadrtche1.shape("square")
 kvadrtche1.color("#700353")
 kvadrtche1.shapesize(stretch_wid=2, stretch_len=2)
 kvadrtche1.penup()
-kvadrtche1.goto(-600, 0)
+kvadrtche1.goto(-550, 0)
 
 
 pionka_1 = turtle.Turtle()
@@ -50,7 +50,7 @@ pionka_1.color("green")
 pionka_1.shapesize(stretch_wid=2, stretch_len=2)
 pionka_1.penup()
 pionka_1.poziciya = 0
-pionka_1.goto(-650, 0)
+pionka_1.goto(-600 + pionka_1.poziciya * 50, 0)
 
 
 
@@ -62,18 +62,18 @@ bot.color("red")
 bot.shapesize(stretch_wid=2, stretch_len=2)
 bot.penup()
 bot.poziciya = 0
-bot.goto(-650, 0)
+bot.goto(-600 + bot.poziciya * 50, 0)
 
 
 
 
 x = -600
-daljina_pole = 0
+daljina_pole = 1
 while x < 500:
-        kvadrtche1.stamp()
         
         x = x + 50
         daljina_pole = daljina_pole + 1
+        kvadrtche1.stamp()
         kvadrtche1.goto(x, 0)
         
 
@@ -147,7 +147,7 @@ def hod_nazad():
 
     if pionka_1.poziciya == bot.poziciya:
         bot.poziciya = 0
-        bot.goto(-650, 0)
+        bot.goto(-600, 0)
 
     proverka_vtoro_hvurlqne()
 
@@ -166,7 +166,7 @@ def hod_napred():
 
     if pionka_1.poziciya == bot.poziciya:
         bot.poziciya = 0
-        bot.goto(-650, 0)
+        bot.goto(-600, 0)
     proverka_vtoro_hvurlqne()
     
 
@@ -206,7 +206,7 @@ def hod_na_bota():
 
     if bot.poziciya == pionka_1.poziciya:
         pionka_1.poziciya = 0
-        pionka_1.goto(-650, 0)
+        pionka_1.goto(-600, 0)
 
     text.clear()
     text.write("ти си на ход.", 
